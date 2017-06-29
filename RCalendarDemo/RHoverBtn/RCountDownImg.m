@@ -122,6 +122,7 @@
         _countDownLabel = [[UILabel alloc] init];
         _countDownLabel.textAlignment = NSTextAlignmentCenter;
         _countDownLabel.numberOfLines = 0;
+        _countDownLabel.text = @"签到";
         _countDownLabel.textColor = [UIColor whiteColor];
     }
     return _countDownLabel;

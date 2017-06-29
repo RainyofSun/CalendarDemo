@@ -27,9 +27,9 @@
 
 /**
  * 获取签到数据,刷新日历UI
- * @param   roomid  String  签到房间
+ * @param   dataDic  NSDictionary  签到数据
  */
--(void)refreshCalendarData:(NSString*)roomid;
+-(void)refreshCalendarData:(NSMutableArray*)dataDic;
 
 /**
  * 释放内存

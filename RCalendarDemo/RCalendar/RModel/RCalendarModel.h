@@ -10,16 +10,14 @@
 
 @interface RCalendarModel : NSObject
 
-@property(strong,nonatomic)NSString * year;
-@property(strong,nonatomic)NSString * month;
-@property(strong,nonatomic)NSString * day;
-@property(strong,nonatomic)NSString * price;
-@property(strong,nonatomic)NSString * sequence;
-@property(strong,nonatomic)NSString * ID;
-@property(strong,nonatomic)NSString * audlt_price;
-@property(strong,nonatomic)NSString * lineid;
-@property(strong,nonatomic)NSString * children_price;
-@property(strong,nonatomic)NSString * depart_date;
-@property(strong,nonatomic)NSString * clear_date;
+/**sign1*/
+@property (nonatomic,copy) NSString *sign1;
+/**sign2*/
+@property (nonatomic,copy) NSString *sign2;
+/**sign3*/
+@property (nonatomic,copy) NSString *sign3;
+
++(instancetype)loadWithDict:(NSDictionary*)dict;
+-(instancetype)initWithDataSource:(NSDictionary*)dict;
 
 @end

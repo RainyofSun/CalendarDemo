@@ -18,6 +18,12 @@
 @property (nonatomic,strong) RCalendarView *calendarView;
 /**倒计时按钮*/
 @property (nonatomic,strong) RCountDownImg *signImg;
+/**sign1*/
+@property (nonatomic,copy) NSString *sign1;
+/**sign2*/
+@property (nonatomic,copy) NSString *sign2;
+/**sign3*/
+@property (nonatomic,copy) NSString *sign3;
 
 @end
 
@@ -32,6 +38,9 @@
 
 #pragma mark - 按钮点击
 -(void)tapSign:(UIGestureRecognizer*)sender{
+    if (!self.calendarView.hidden) {
+        return;
+    }
     [self.signImg mas_updateConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(self.view.mas_trailing).with.offset(-15);
     }];
@@ -40,6 +49,23 @@
     }];
     self.calendarView.hidden = NO;
     [self.calendarView curlDown:1];
+    [self.calendarView refreshCalendarData:[self creatRandomData]];
+}
+
+#pragma mark - 生成随机数据
+-(NSMutableArray*)creatRandomData{
+    NSMutableArray* dataSource = [NSMutableArray array];
+    for (int i = 0; i < 30; i++) {
+        self.sign1 = [NSString stringWithFormat:@"%u",arc4random()%2];
+        self.sign2 = [NSString stringWithFormat:@"%u",arc4random()%2];
+        self.sign3 = [NSString stringWithFormat:@"%u",arc4random()%2];
+        NSDictionary* dict = @{@"sign1":self.sign1,
+                               @"sign2":self.sign2,
+                               @"sign3":self.sign3};
+        [dataSource addObject:dict];
+    }
+    
+    return dataSource;
 }
 
 #pragma mark - RCalendarViewDelegate

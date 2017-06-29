@@ -79,8 +79,12 @@ static CGFloat CELLSCALE         = 7.6;
 }
 
 #pragma mark - 暴露接口刷新UI
--(void)refreshCalendarData:(NSString*)roomid{
-    
+-(void)refreshCalendarData:(NSMutableArray*)dataDic{
+    for (NSDictionary* dict in dataDic) {
+        RCalendarModel* model = [RCalendarModel loadWithDict:dict];
+        [self.calendarDateArray addObject:model];
+    }
+    [self.calendarCollectionView reloadData];
 }
 
 -(void)dealloc{

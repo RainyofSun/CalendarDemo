@@ -30,14 +30,14 @@ static CGFloat cellHeight;
 }
 
 -(void)setDataSource:(RCalendarModel *)dataSource{
-//    if (dataSource.sign1.intValue != 0 || dataSource.sign2.intValue != 0 || dataSource.sign3.intValue != 0) {
-//        self.calenderLabel.textColor = RGBCOLOR(235, 54, 65);
-//    } else {
-//        self.calenderLabel.textColor = RGBCOLOR(109, 108, 129);
-//    }
-//    [dataSource.sign1 boolValue] ? [self.tian setHidden:NO] : [self.tian setHidden:YES];
-//    [dataSource.sign2 boolValue] ? [self.ren setHidden:NO] : [self.ren setHidden:YES];
-//    [dataSource.sign3 boolValue] ? [self.di setHidden:NO] : [self.di setHidden:YES];
+    if (dataSource.sign1.intValue != 0 || dataSource.sign2.intValue != 0 || dataSource.sign3.intValue != 0) {
+        self.calenderLabel.textColor = RGBCOLOR(235, 54, 65);
+    } else {
+        self.calenderLabel.textColor = RGBCOLOR(109, 108, 129);
+    }
+    [dataSource.sign1 boolValue] ? [self.tian setHidden:NO] : [self.tian setHidden:YES];
+    [dataSource.sign2 boolValue] ? [self.ren setHidden:NO] : [self.ren setHidden:YES];
+    [dataSource.sign3 boolValue] ? [self.di setHidden:NO] : [self.di setHidden:YES];
 }
 
 -(void)layoutSubviews{
