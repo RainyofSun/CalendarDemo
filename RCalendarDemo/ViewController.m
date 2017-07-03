@@ -11,6 +11,7 @@
 #import "RCountDownImg.h"
 #import <Masonry.h>
 #import "UIView+Animation.h"
+#import "NSObject+RDateTool.h"
 
 @interface ViewController ()<RCalendarViewDelegate>
 
@@ -55,6 +56,8 @@
 #pragma mark - 生成随机数据
 -(NSMutableArray*)creatRandomData{
     NSMutableArray* dataSource = [NSMutableArray array];
+    NSUInteger monthDays = [self getCurrentMonthForDays];
+    for (int i = 0; i < monthDays; i++) {
         self.sign1 = [NSString stringWithFormat:@"%u",arc4random()%2];
         self.sign2 = [NSString stringWithFormat:@"%u",arc4random()%2];
         self.sign3 = [NSString stringWithFormat:@"%u",arc4random()%2];
