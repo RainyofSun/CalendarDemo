@@ -55,7 +55,6 @@
 #pragma mark - 生成随机数据
 -(NSMutableArray*)creatRandomData{
     NSMutableArray* dataSource = [NSMutableArray array];
-    for (int i = 0; i < 30; i++) {
         self.sign1 = [NSString stringWithFormat:@"%u",arc4random()%2];
         self.sign2 = [NSString stringWithFormat:@"%u",arc4random()%2];
         self.sign3 = [NSString stringWithFormat:@"%u",arc4random()%2];
